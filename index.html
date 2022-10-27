@@ -9,77 +9,96 @@
 </head>
 
 <body>
-  <label for="nombres">
-    <span>nombres</span>
-    <input type="text" id="nombres">
-  </label>
+  <div class="flex flex-col" id="form">
+    <label for="nombres">
+      <span>nombres</span>
+      <input type="text" id="nombres">
+    </label>
+    
+    <label for="apellidos">  
+      <span>apellidos</span>
+      <input type="text" id="apellidos">
+    </label>
+    
+    <label for="cuil">
+      <span>cuil</span>
+      <input type="number" id="cuil">
+    </label>
+    
+    <label for="legajo">
+      <span>legajo</span>
+      <input type="number" id="legajo">
+    </label>
+    
+    <label for="categoria">
+      <span>categoría</span>
+      <input type="text" id="categoria">
+    </label>
+    
+    <label for="division">
+      <span>división</span>
+      <input type="text" id="division">
+    </label>
+    
+    <label for="departamento">  
+      <span>departamento</span>
+      <input type="text" id="departamento">
+    </label>
+    
+    <label for="basico">
+      <span>sueldo básico</span>
+      <input type="number" id="basico">
+    </label>
+    
+    <label for="extras50">
+      <span>horas extras (50%)</span>
+      <input type="number" id="extras50">
+    </label>
+    
+    <label for="extras100">
+      <span>horas extras (100%)</span>
+      <input type="number" id="extras100">
+    </label>
+    
+    <label for="feriados">
+      <span>feriados</span>
+      <input type="number" id="feriados">
+    </label>
+    
+    <label for="faltas">
+      <span>faltas</span>
+      <input type="number" id="faltas">
+    </label>
 
-  <label for="apellidos">  
-    <span>apellidos</span>
-    <input type="text" id="apellidos">
-  </label>
+    <label for="licencia">
+      <span>días de licencia</span>
+      <input type="number" id="licencia">
+    </label>
+    
+    <button id="submit">Generar</button>
+  </div>
 
-  <label for="cuil">
-    <span>cuil</span>
-    <input type="number" id="cuil">
-  </label>
-
-  <label for="legajo">
-    <span>legajo</span>
-    <input type="number" id="legajo">
-  </label>
-
-  <label for="categoria">
-    <span>categoría</span>
-    <input type="text" id="categoria">
-  </label>
-
-  <label for="division">
-    <span>división</span>
-    <input type="text" id="division">
-  </label>
-  
-  <label for="departamento">  
-    <span>departamento</span>
-    <input type="text" id="departamento">
-  </label>
-
-  <label for="">
-    <span>fecha ingreso</span>
-    <input type="date" id="ingreso">
-  </label>
-
-  <label for="antiguedad">
-    <span>antiguedad</span>
-    <input type="number" id="antiguedad">
-  </label>
-
-  <label for="basico">
-    <span>sueldo básico</span>
-    <input type="number" id="basico">
-  </label>
-
-  <label for="extras50">
-    <span>horas extras (50%)</span>
-    <input type="number" id="extras50">
-  </label>
-
-  <label for="extras100">
-    <span>horas extras (100%)</span>
-    <input type="number" id="extras100">
-  </label>
-
-  <label for="feriados">
-    <span>feriados</span>
-    <input type="number" id="feriados">
-  </label>
-
-  <label for="faltas">
-    <span>faltas</span>
-    <input type="number" id="faltas">
-  </label>
-
-  <button>Generar</button>
-
-</body>
+  <div class="flex flex-col" id="result">
+    <span id="nombres">Nombres</span>
+    <span id="apellidos">Apellidos</span>
+    <span id="cuil">CUIL</span>
+    <span id="legajo">Legajo</span>
+    <span id="basico">Sueldo básico</span>
+    <span id="productividad">Presentismo</span>
+    <span id="feriados">Feriados</span>
+    <span id="extras50">Horas extras(>50%)</span>
+    <span id="extras100">Horas extras(>100%)</span>
+    <span id="licencia">Días de licencia</span>
+    <span id="jubilacion">Jubilacion</span>
+    <span id="obrasocial">Obra social</span>
+    <span id="inssjp">INSSJP</span>
+    <span id="aguinaldo">Aguinaldo</span>
+    <span id="vacaciones">Vacaciones</span>
+    <span id="bruto">Sueldo bruto</span>
+    <span id="deducciones">Deducciones totales</span>
+    <span id="neto">Sueldo neto</span>
+    <button id="volver">volver</button>
+  </div>
+    
+  </body>
 </html>
