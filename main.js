@@ -29,6 +29,11 @@ const checkValue = (value) => {
     else return Math.round(value * 100) / 100;
 }
 
+const checkText = (value) => {
+    if(value === "") return "---";
+    else return value;
+}
+
 const generar = () => {    
     form.classList.add("hidden");
     result.classList.remove("hidden");
@@ -44,13 +49,13 @@ const generar = () => {
     const inputextras50 = checkValue(document.querySelector("#extras50").value)
     const inputextras100 = checkValue(document.querySelector("#extras100").value)
     const inputferiados = checkValue(document.querySelector("#feriados").value)
-    const inputfaltas = document.querySelector("#faltas").value
+    const inputfaltas = checkValue(document.querySelector("#faltas").value)
     const inputlicencia = document.querySelector("#licencia").value
 
-    const valorhora = basico / 176
+    const valorhora = inputbasico / 176
     
-    resultnombres.innerHTML = checkValue(inputnombres)
-    resultapellidos.innerHTML = checkValue(inputapellidos)
+    resultnombres.innerHTML = checkText(inputnombres)
+    resultapellidos.innerHTML = checkText(inputapellidos)
     resultcuil.innerHTML = checkValue(inputcuil)
     resultlegajo.innerHTML = checkValue(inputlegajo)
     resultbasico.innerHTML = checkValue(inputbasico)
@@ -58,10 +63,11 @@ const generar = () => {
     const productividad = checkValue(inputbasico * 0.1)
     resultproductividad.innerHTML = `${productividad}`
 
-    var porc_faltas
-    if(inputfaltas > 5) {porc_faltas = 0.25}
-    else {porc_faltas = 0.05 * inputfaltas}
-    const presentismo = checkValue((inputbasico) - (inputbasico * porc_faltas))
+    const porc_faltas = () => {
+        if(inputfaltas > 5) {return 0.25}
+        else {return 0.05 * inputfaltas}
+    }
+    const presentismo = checkValue((inputbasico) - (inputbasico * porc_faltas()))
     resultpresentismo.innerHTML = `${presentismo}`
     
     const extras50 = checkValue(valorhora * inputextras50 / 2)
