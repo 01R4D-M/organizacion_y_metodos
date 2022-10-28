@@ -1,0 +1,52 @@
+
+    /*En proceso*/
+    
+    body {
+        background-color: rgb(231, 227, 227);
+        
+    }
+  
+
+  h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+
+
+  }
+
+  label{
+    text-align: center;
+    
+  }
+
+  span{
+    line-height: 3.5;
+    text-transform: capitalize;
+    font-family:monospace;
+  }
+
+  input { 
+    line-height: 3.5;
+    border: 1px solid rgb(29, 28, 28);
+    border-radius: 5px;
+}
+
+.result{
+    line-height: 3.5;
+    text-transform: capitalize;
+    font-family:monospace;
+}
+
+
+.generar {
+    background-color: #727772;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
