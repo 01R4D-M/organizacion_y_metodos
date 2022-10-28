@@ -95,8 +95,6 @@ const generar = () => {
         const aguinaldo = "---"
         resultaguinaldo.innerHTML = `${aguinaldo}`
     }
-    console.log(justificadas)
-    console.log(inputinjustificadas)
 
     if(inputvacaciones !== null){
         const vacaciones = checkValue((inputbasico + presentismo + productividad) / 2)
