@@ -1,102 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>TP11 - Organización y Métodos</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>TP11 - Organización y Métodos</title>
+  </head>
 
-<body>
-  
-  <h1 class="font-semibold text-3xl p-3 text-center">Recibo de sueldo</h1>
-  <div class="flex flex-col gap-5 mx-auto" id="form">
-    <label for="nombres">
-      <span>nombres</span>
-      <input type="text" id="nombres" placeholder="Nombres" class="p-1">
-    </label>
-    
-    <label for="apellidos">  
-      <span>apellidos</span>
-      <input type="text" id="apellidos" placeholder="Apellidos" class="p-1">
-    </label>
-    
-    <label for="cuil">
-      <span>cuil</span>
-      <input type="number" id="cuil" placeholder="Cuil" class="p-1">
-    </label>
-    
-    <label for="legajo">
-      <span>legajo</span>
-      <input type="number" id="legajo" placeholder="Legajo" class="p-1">
-    </label>
-    
-    <label for="basico">
-      <span>sueldo básico</span>
-      <input type="number" id="basico" placeholder="Sueldo Básico" class="p-1">
-    </label>
-    
-    <label for="extras50">
-      <span>horas extras (50%)</span>
-      <input type="number" id="extras50" placeholder="Horas extras (50%)" class="p-1">
-    </label>
-    
-    <label for="extras100">
-      <span>horas extras (100%)</span>
-      <input type="number" id="extras100" placeholder="Horas extras (100%)" class="p-1">
-    </label>
-    
-    <label for="feriados">
-      <span>feriados</span>
-      <input type="number" id="feriados" placeholder="Feriados" class="p-1">
-    </label>
-    
-    <label for="faltas">
-      <span>faltas</span>
-      <input type="number" id="faltas" placeholder="Faltas" class="p-1">
-    </label>
-    
-    <style>
-    button {
-      background-color: #1f4283;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-    }
-    </style>
+  <body>
+    <h1 class="font-semibold text-3xl p-3 text-center">Recibo de sueldo</h1>
+    <div class="flex flex-col gap-5 mx-auto" id="form">
+      <label for="nombres">
+        <span>nombres</span>
+        <input type="text" id="nombres" placeholder="Nombres" class="p-1" />
+      </label>
 
-    <button onclick="generar()">Generar</button>
-    
-  </div>
+      <label for="apellidos">
+        <span>apellidos</span>
+        <input type="text" id="apellidos" placeholder="Apellidos" class="p-1" />
+      </label>
 
-  <div class="flex flex-col mx-auto" id="result">
-    <div class="flex flex-row justify-between w-full"><span>Nombres</span><span id="resultnombres">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Apellidos</span><span id="resultapellidos">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>CUIL</span><span id="resultcuil">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Legajo</span><span id="resultlegajo">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Sueldo básico</span><span id="resultbasico">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Productividad</span><span id="resultproductividad">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Presentismo</span><span id="resultpresentismo">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Feriados</span><span id="resultferiados">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Horas extras (50%)</span><span id="resultextras50">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Horas extras (100%)</span><span id="resultextras100">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Jubilación</span><span id="resultjubilacion">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Obra social</span><span id="resultobrasocial">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>INSSJP</span><span id="resultinssjp">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Aguinaldo</span><span id="resultaguinaldo">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Vacaciones</span><span id="resultvacaciones">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Sueldo bruto</span><span id="resultbruto">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Deducciones totales</span><span id="resultdeducciones">---</span></div>
-    <div class="flex flex-row justify-between w-full"><span>Sueldo neto</span><span id="resultneto">---</span></div>
-    <button id="volver" onclick="volver()">volver</button>
-  </div>
+      <label for="cuil">
+        <span>cuil</span>
+        <input type="number" id="cuil" placeholder="Cuil" class="p-1" />
+      </label>
+
+      <label for="legajo">
+        <span>legajo</span>
+        <input type="number" id="legajo" placeholder="Legajo" class="p-1" />
+      </label>
+
+      <label for="basico">
+        <span>sueldo básico</span>
+        <input
+          type="number"
+          id="basico"
+          placeholder="Sueldo Básico"
+          class="p-1"
+        />
+      </label>
+
+      <label for="extras50">
+        <span>horas extras (50%)</span>
+        <input
+          type="number"
+          id="extras50"
+          placeholder="Horas extras (50%)"
+          class="p-1"
+        />
+      </label>
+
+      <label for="extras100">
+        <span>horas extras (100%)</span>
+        <input
+          type="number"
+          id="extras100"
+          placeholder="Horas extras (100%)"
+          class="p-1"
+        />
+      </label>
+
+      <label for="feriados">
+        <span>feriados</span>
+        <input type="number" id="feriados" placeholder="Feriados" class="p-1" />
+      </label>
+
+      <label for="injustificadas">
+        <span>faltas injustificadas</span>
+        <input type="number" id="injustificadas" placeholder="Faltas injustificadas" class="p-1" />
+      </label>
+
+      <label for="justificadas">
+        <span>faltas justificadas</span>
+        <input type="number" id="justificadas" placeholder="Faltas justificadas" class="p-1" />
+      </label>
+
+      <label for="aguinaldo">
+        <span>Calcular aguinaldo</span>
+        <input type="checkbox" id="aguinaldo" class="w-4 h-4">
+      </label>
+
+      <label for="vacaciones">
+        <span>Calcular vacaciones</span>
+        <input type="checkbox" id="vacaciones" class="w-4 h-4">
+      </label>
+
+      <style>
+        button {
+          background-color: #1f4283;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+      </style>
+
+      <button onclick="generar()">Generar</button>
+    </div>
+
+    <div class="flex flex-col mx-auto" id="result">
+      <div class="flex flex-row justify-between w-full">
+        <span>Nombres</span><span id="resultnombres"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Apellidos</span><span id="resultapellidos"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>CUIL</span><span id="resultcuil"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Legajo</span><span id="resultlegajo"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Sueldo básico</span><span id="resultbasico"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Productividad</span><span id="resultproductividad"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Presentismo</span><span id="resultpresentismo"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Feriados</span><span id="resultferiados"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Horas extras (50%)</span><span id="resultextras50"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Horas extras (100%)</span><span id="resultextras100"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Jubilación</span><span id="resultjubilacion"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Obra social</span><span id="resultobrasocial"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>INSSJP</span><span id="resultinssjp"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Aguinaldo</span><span id="resultaguinaldo"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Vacaciones</span><span id="resultvacaciones"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Sueldo bruto</span><span id="resultbruto"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Deducciones totales</span><span id="resultdeducciones"></span>
+      </div>
+      <div class="flex flex-row justify-between w-full">
+        <span>Sueldo neto</span><span id="resultneto"></span>
+      </div>
+      <button id="volver" onclick="volver()">volver</button>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
-

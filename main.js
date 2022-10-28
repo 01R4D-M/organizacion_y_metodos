@@ -34,9 +34,8 @@ const checkText = (value) => {
 }
 
 const generar = () => {    
-    form.classList.add("hidden");
     result.classList.remove("hidden");
-
+    
     const inputnombres = document.querySelector("#nombres").value
     const inputapellidos = document.querySelector("#apellidos").value
     const inputcuil = document.querySelector("#cuil").value
@@ -45,7 +44,10 @@ const generar = () => {
     const inputextras50 = checkValue(document.querySelector("#extras50").value)
     const inputextras100 = checkValue(document.querySelector("#extras100").value)
     const inputferiados = checkValue(document.querySelector("#feriados").value)
-    const inputfaltas = checkValue(document.querySelector("#faltas").value)
+    const inputjustificadas = checkValue(document.querySelector("#justificadas").value)
+    const inputinjustificadas = checkValue(document.querySelector("#injustificadas").value)
+    const inputaguinaldo = document.querySelector("#aguinaldo:checked")
+    const inputvacaciones = document.querySelector("#vacaciones:checked")
 
     const valorhora = inputbasico / 176
     
@@ -58,12 +60,15 @@ const generar = () => {
     const productividad = checkValue(inputbasico * 0.1)
     resultproductividad.innerHTML = `${productividad}`
 
+    var justificadas
+    if(inputjustificadas === null || isNaN(inputjustificadas)) justificadas = 0
+    else justificadas = inputjustificadas
     const porc_faltas = () => {
-        if(inputfaltas > 5) {return 0.25}
-        else {return 0.05 * inputfaltas}
+        if(justificadas + inputinjustificadas > 5) {return 0.25}
+        else {return 0.05 * (justificadas + inputinjustificadas)}
     }
     const presentismo = checkValue((inputbasico * 0.25) - (inputbasico * porc_faltas()))
-    resultpresentismo.innerHTML = `${presentismo}`
+    resultpresentismo.innerHTML = `${presentismo} (${justificadas} faltas justificadas)`
     
     const extras50 = checkValue(valorhora * inputextras50 / 2)
     resultextras50.innerHTML = `${extras50}`
@@ -82,11 +87,22 @@ const generar = () => {
     const inssjp = checkValue(checkValue(inputbasico * 0.03))
     resultinssjp.innerHTML = `${inssjp}`
 
-    const aguinaldo = checkValue((inputbasico + productividad + presentismo + extras50 + extras100) / 2)
-    resultaguinaldo.innerHTML = `${aguinaldo}`
+    if(inputaguinaldo !== null){
+        const aguinaldo = checkValue((inputbasico + productividad + presentismo + extras50 + extras100) / 2)
+        resultaguinaldo.innerHTML = `${aguinaldo}`
+    }
+    else {
+        const aguinaldo = "---"
+        resultaguinaldo.innerHTML = `${aguinaldo}`
+    }
+    console.log(justificadas)
+    console.log(inputinjustificadas)
 
-    const vacaciones = checkValue((inputbasico + presentismo + productividad) / 2)
-    resultvacaciones.innerHTML = `${vacaciones}`
+    if(inputvacaciones !== null){
+        const vacaciones = checkValue((inputbasico + presentismo + productividad) / 2)
+        resultvacaciones.innerHTML = `${vacaciones}`
+    }
+    else resultvacaciones.innerHTML = "---"
 
     const bruto = checkValue(inputbasico + productividad + presentismo + extras50 + extras100)
     resultbruto.innerHTML = `${bruto}`
@@ -96,6 +112,8 @@ const generar = () => {
 
     const neto = checkValue(bruto - deducciones)
     resultneto.innerHTML = `${neto}`
+
+    form.classList.add("hidden");
 }
 
 const volver = () => {
