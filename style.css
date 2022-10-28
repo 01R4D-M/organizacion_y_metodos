@@ -1,7 +1,7 @@
-/*En proceso*/
+   /*En proceso*/
     
     body {
-        background-color: rgb(231, 227, 227);
+        background-color: rgb(255, 255, 255);
         
     }
   
@@ -15,7 +15,11 @@
 
   div{
     text-align: center;
-    
+    padding: 20px;
+  max-width: 400px;
+  background-color: #bdc4c0;
+  margin: 30px auto 0 auto;
+  border-radius: 10px;  
   }
 
   span{
@@ -27,13 +31,14 @@
 
   input { 
     background-color: white;
-
-    border: 1px solid rgb(29, 28, 28);
+     border: 1px solid rgb(29, 28, 28);
     border-radius: 5px;
+   
 }
 
 .linea {
-  border-top: 2px solid black;
+  border-top: 1px solid black;
+  background-color: white
   height: 30px;
   max-width: 200px;
   padding: 0;
