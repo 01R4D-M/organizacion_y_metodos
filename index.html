@@ -10,10 +10,9 @@
 </head>
 
 <body>
-  <h1>Formulario</h1>
-  <div class="linea"></div>
   
-  <div class="flex flex-col" id="form">
+  <h1 class="font-semibold text-3xl p-3 text-center">Recibo de sueldo</h1>
+  <div class="flex flex-col gap-5 mx-auto" id="form">
     <label for="nombres">
       <span>nombres</span>
       <input type="text" id="nombres" placeholder="Nombres">
@@ -32,21 +31,6 @@
     <label for="legajo">
       <span>legajo</span>
       <input type="number" id="legajo" placeholder="Legajo">
-    </label>
-    
-    <label for="categoria">
-      <span>categoría</span>
-      <input type="text" id="categoria" placeholder="Categoría">
-    </label>
-    
-    <label for="division">
-      <span>división</span>
-      <input type="text" id="division" placeholder="División">
-    </label>
-    
-    <label for="departamento">  
-      <span>departamento</span>
-      <input type="text" id="departamento" placeholder="Departamento">
     </label>
     
     <label for="basico">
@@ -73,11 +57,6 @@
       <span>faltas</span>
       <input type="number" id="faltas" placeholder="Faltas">
     </label>
-
-    <label for="licencia">
-      <span>días de licencia</span>
-      <input type="number" id="licencia" placeholder="Días de licencia">
-    </label>
     
     <style>
     button {
@@ -96,28 +75,25 @@
     
   </div>
 
-    
-
-  <div class="flex flex-col" id="result">
-    <span id="resultnombres">Nombres</span>
-    <span id="resultapellidos">Apellidos</span>
-    <span id="resultcuil">CUIL</span>
-    <span id="resultlegajo">Legajo</span>
-    <span id="resultbasico">Sueldo básico</span>
-    <span id="resultproductividad">Productividad</span>
-    <span id="resultpresentismo">Presentismo</span>
-    <span id="resultferiados">Feriados</span>
-    <span id="resultextras50">Horas extras(>50%)</span>
-    <span id="resultextras100">Horas extras(>100%)</span>
-    <span id="resultlicencia">Días de licencia</span>
-    <span id="resultjubilacion">Jubilacion</span>
-    <span id="resultobrasocial">Obra social</span>
-    <span id="resultinssjp">INSSJP</span>
-    <span id="resultaguinaldo">Aguinaldo</span>
-    <span id="resultvacaciones">Vacaciones</span>
-    <span id="resultbruto">Sueldo bruto</span>
-    <span id="resultdeducciones">Deducciones totales</span>
-    <span id="resultneto">Sueldo neto</span>
+  <div class="flex flex-col mx-auto" id="result">
+    <div class="flex flex-row justify-between w-full"><span>Nombres</span><span id="resultnombres">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Apellidos</span><span id="resultapellidos">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>CUIL</span><span id="resultcuil">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Legajo</span><span id="resultlegajo">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Sueldo básico</span><span id="resultbasico">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Productividad</span><span id="resultproductividad">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Presentismo</span><span id="resultpresentismo">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Feriados</span><span id="resultferiados">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Horas extras (50%)</span><span id="resultextras50">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Horas extras (100%)</span><span id="resultextras100">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Jubilación</span><span id="resultjubilacion">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Obra social</span><span id="resultobrasocial">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>INSSJP</span><span id="resultinssjp">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Aguinaldo</span><span id="resultaguinaldo">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Vacaciones</span><span id="resultvacaciones">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Sueldo bruto</span><span id="resultbruto">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Deducciones totales</span><span id="resultdeducciones">---</span></div>
+    <div class="flex flex-row justify-between w-full"><span>Sueldo neto</span><span id="resultneto">---</span></div>
     <button id="volver" onclick="volver()">volver</button>
   </div>
     <script src="main.js"></script>

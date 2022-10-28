@@ -13,7 +13,6 @@ const resultpresentismo = document.querySelector("#resultpresentismo")
 const resultferiados = document.querySelector("#resultferiados")
 const resultextras50 = document.querySelector("#resultextras50")
 const resultextras100 = document.querySelector("#resultextras100")
-const resultlicencia = document.querySelector("#resultlicencia")
 const resultjubilacion = document.querySelector("#resultjubilacion")
 const resultobrasocial = document.querySelector("#resultobrasocial")
 const resultinssjp = document.querySelector("#resultinssjp")
@@ -42,15 +41,11 @@ const generar = () => {
     const inputapellidos = document.querySelector("#apellidos").value
     const inputcuil = document.querySelector("#cuil").value
     const inputlegajo = document.querySelector("#legajo").value
-    const inputcategoria = document.querySelector("#categoria").value
-    const inputdivision = document.querySelector("#division").value
-    const inputdepartamento = document.querySelector("#departamento").value
     const inputbasico = checkValue(document.querySelector("#basico").value)
     const inputextras50 = checkValue(document.querySelector("#extras50").value)
     const inputextras100 = checkValue(document.querySelector("#extras100").value)
     const inputferiados = checkValue(document.querySelector("#feriados").value)
     const inputfaltas = checkValue(document.querySelector("#faltas").value)
-    const inputlicencia = document.querySelector("#licencia").value
 
     const valorhora = inputbasico / 176
     
@@ -67,7 +62,7 @@ const generar = () => {
         if(inputfaltas > 5) {return 0.25}
         else {return 0.05 * inputfaltas}
     }
-    const presentismo = checkValue((inputbasico) - (inputbasico * porc_faltas()))
+    const presentismo = checkValue((inputbasico * 0.25) - (inputbasico * porc_faltas()))
     resultpresentismo.innerHTML = `${presentismo}`
     
     const extras50 = checkValue(valorhora * inputextras50 / 2)
@@ -77,8 +72,6 @@ const generar = () => {
     resultextras100.innerHTML = `${extras100}`
 
     resultferiados.innerHTML = `${checkValue(inputferiados * valorhora * 8)}`
-
-    // resultlicencia
 
     const jubilacion = checkValue(checkValue(inputbasico * 0.11))
     resultjubilacion.innerHTML = `${jubilacion}`
@@ -92,7 +85,7 @@ const generar = () => {
     const aguinaldo = checkValue((inputbasico + productividad + presentismo + extras50 + extras100) / 2)
     resultaguinaldo.innerHTML = `${aguinaldo}`
 
-    const vacaciones = checkValue(inputbasico + presentismo + productividad)
+    const vacaciones = checkValue((inputbasico + presentismo + productividad) / 2)
     resultvacaciones.innerHTML = `${vacaciones}`
 
     const bruto = checkValue(inputbasico + productividad + presentismo + extras50 + extras100)
