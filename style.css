@@ -32,12 +32,8 @@
     border-radius: 5px;
 }
 
-.result{
-    line-height: 3.5;
-    text-transform: capitalize;
-    font-family:monospace;
-}
 
+/*Intento de boton*/
 
 .generar {
     background-color: #727772;
